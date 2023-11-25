@@ -5,7 +5,7 @@ import numpy as np
 from .utils import pil2tensor, tensor2pil
 
 
-class ImageSquareFittingNode:
+class ImageSquareAdapterNode:
     """
     A custom node for ComfyUI to fit an image into a square frame,
     resizing and padding it as necessary, with options for resampling, supersampling,

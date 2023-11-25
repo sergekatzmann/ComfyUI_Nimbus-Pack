@@ -24,7 +24,7 @@ def is_installed(package, package_overwrite=None):
         if result.returncode != 0:
             print(f"Couldn't install\nCommand: {command}\nError code: {result.returncode}")
 
-from .image_fitting_node import ImageSquareFittingNode
+from .image_fitting_node import ImageSquareAdapterNode
 
 NODE_CLASS_MAPPINGS = {
     "ImageSquareAdapterNode": ImageSquareAdapterNode
