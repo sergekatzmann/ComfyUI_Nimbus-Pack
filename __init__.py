@@ -25,13 +25,19 @@ def is_installed(package, package_overwrite=None):
             print(f"Couldn't install\nCommand: {command}\nError code: {result.returncode}")
 
 from .image_fitting_node import ImageSquareAdapterNode
+from .image_fit_resize_node import ImageResizeAndCropNode
+
 
 NODE_CLASS_MAPPINGS = {
-    "ImageSquareAdapterNode": ImageSquareAdapterNode
+    "ImageSquareAdapterNode": ImageSquareAdapterNode,
+    "ImageResizeAndCropNode": ImageResizeAndCropNode
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "ImageSquareAdapterNode": "Image Square Adapter Node"
+    "ImageSquareAdapterNode": "Image Square Adapter Node",
+    "ImageResizeAndCropNode": "Image Resize And Crop Node"
 }
+
+__all__ = NODE_CLASS_MAPPINGS
 
 print('\033[34mNimbus Nodes: \033[92mLoaded\033[0m')

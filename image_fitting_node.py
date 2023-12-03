@@ -60,7 +60,8 @@ class ImageSquareAdapterNode:
 
         # Apply supersample if needed
         if supersample == 'true':
-            image = image.resize((new_size[0] * 8, new_size[1] * 8), resample=resample_filters[resample])
+            factor = 8  # Factor by which to scale up before scaling down
+            image = image.resize((new_size[0] * factor, new_size[1] * factor), resample=resample_filters[resample])
 
         # Resize the image
         image = image.resize(new_size, resample=resample_filters[resample])
@@ -88,12 +89,3 @@ class ImageSquareAdapterNode:
             new_img.paste(image, position)
 
         return pil2tensor(new_img)
-
-
-NODE_CLASS_MAPPINGS = {
-    "ImageSquareAdapterNode": ImageSquareAdapterNode
-}
-
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "ImageSquareAdapterNode": "Image Square Adapter Node"
-}
