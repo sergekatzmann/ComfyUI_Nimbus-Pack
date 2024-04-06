@@ -26,16 +26,22 @@ def is_installed(package, package_overwrite=None):
 
 from .image_fitting_node import ImageSquareAdapterNode
 from .image_fit_resize_node import ImageResizeAndCropNode
-
+from .resolution import AspectRatioMobileDevices, AdjustAndRoundDimensions, PopularScreenResolutions
 
 NODE_CLASS_MAPPINGS = {
     "ImageSquareAdapterNode": ImageSquareAdapterNode,
-    "ImageResizeAndCropNode": ImageResizeAndCropNode
+    "ImageResizeAndCropNode": ImageResizeAndCropNode,
+    "AdjustAndRoundDimensions": AdjustAndRoundDimensions,
+    "AspectRatioMobileDevices": AspectRatioMobileDevices,
+    "PopularScreenResolutions" : PopularScreenResolutions
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "ImageSquareAdapterNode": "Image Square Adapter Node",
-    "ImageResizeAndCropNode": "Image Resize And Crop Node"
+    "ImageResizeAndCropNode": "Image Resize And Crop Node",
+    "AdjustAndRoundDimensions" : "Resolution for 2-Stage Upscale with crop",
+    "AspectRatioMobileDevices" : "Aspect Ratio Mobile Devices",
+    "PopularScreenResolutions": "Aspect Ratio Popular",
 }
 
 __all__ = NODE_CLASS_MAPPINGS
