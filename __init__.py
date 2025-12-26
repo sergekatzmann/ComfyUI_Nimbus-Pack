@@ -24,16 +24,32 @@ def is_installed(package, package_overwrite=None):
         if result.returncode != 0:
             print(f"Couldn't install\nCommand: {command}\nError code: {result.returncode}")
 
+is_installed("moviepy")
+
 from .image_fitting_node import ImageSquareAdapterNode
 from .image_fit_resize_node import ImageResizeAndCropNode
 from .resolution import AspectRatioMobileDevices, AdjustAndRoundDimensions, PopularScreenResolutions
+from .load_images_node import LoadImagesFromFolder
+from .number_range_node import NumberRangeNode
+from .slider_comparison_node import SliderComparisonNode
+from .auto_levels_node import AutoLevelsNode
+from .math_operation_node import MathOperationNode
+
+from .image_patch_nodes import ImageExtractRect, ImageCombineRect
 
 NODE_CLASS_MAPPINGS = {
     "ImageSquareAdapterNode": ImageSquareAdapterNode,
     "ImageResizeAndCropNode": ImageResizeAndCropNode,
     "AdjustAndRoundDimensions": AdjustAndRoundDimensions,
     "AspectRatioMobileDevices": AspectRatioMobileDevices,
-    "PopularScreenResolutions" : PopularScreenResolutions
+    "PopularScreenResolutions" : PopularScreenResolutions,
+    "LoadImagesFromFolder": LoadImagesFromFolder,
+    "NumberRangeNode": NumberRangeNode,
+    "SliderComparisonNode": SliderComparisonNode,
+    "AutoLevelsNode": AutoLevelsNode,
+    "MathOperationNode": MathOperationNode,
+    "ImageExtractRect": ImageExtractRect,
+    "ImageCombineRect": ImageCombineRect
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -42,6 +58,13 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AdjustAndRoundDimensions" : "Resolution for 2-Stage Upscale with crop",
     "AspectRatioMobileDevices" : "Aspect Ratio Mobile Devices",
     "PopularScreenResolutions": "Aspect Ratio Popular",
+    "LoadImagesFromFolder": "Load Images From Folder",
+    "NumberRangeNode": "Number Range",
+    "SliderComparisonNode": "Slider Comparison (Video)",
+    "AutoLevelsNode": "Auto Levels (Image)",
+    "MathOperationNode": "Math Operation (Min/Max)",
+    "ImageExtractRect": "Image Extract Rect",
+    "ImageCombineRect": "Image Combine Rect"
 }
 
 __all__ = NODE_CLASS_MAPPINGS
